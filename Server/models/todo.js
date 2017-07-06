@@ -10,7 +10,7 @@ var Todo_model=mongoose.model('Todo_model',{
 
   },completedAt:{
     type:Boolean,
-  default:false
+  // default:false
 
   }
 });
