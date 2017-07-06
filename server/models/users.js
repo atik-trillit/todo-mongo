@@ -1,25 +1,26 @@
 var mongoose=require('mongoose');
-var Todo_model=mongoose.model('Todo_model',{
-  email:{
+
+var users1=mongoose.model('users1',{
+  text:{
     type:String,
       minlength:1
 
-  },age:{
+  },
+  age:{
     type:Number,
-    required:true
+  
 
-  },completedAt:{
+  },
+  completed:{
     type:Boolean,
   default:false
 
   }
 });
 
-module.exports={Todo_model};
-
-// var name=new Todo_model({
-//   text:'Shamim',
-//   age:26
+// var name=new users1({
+//   text:'Santosh',
+//   age:22
 //
 // });
 //
@@ -28,3 +29,6 @@ module.exports={Todo_model};
 // },(err)=>{
 //   console.log(err);
 // });
+
+
+module.exports={users1};

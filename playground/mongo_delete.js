@@ -1,6 +1,6 @@
 const {MongoClient,ObjectId} = require('mongodb');
 // var obj=ObjectId();
-MongoClient.connect('mongodb://localhost:27017/TodoApp',(err,db)=>{
+MongoClient.connect('mongodb://localhost:27017/TodoNew',(err,db)=>{
   if(err){
   console.log('Unable to connect with MondoDb Server');
   }
@@ -15,7 +15,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',(err,db)=>{
 //   console.log(res);
 // });
 
-db.collection('Todos').findOneAndDelete({complete:false}).then((res)=>{
+db.collection('users').findOneAndDelete({text:'trillit'}).then((res)=>{
   console.log(res);
 })
 });

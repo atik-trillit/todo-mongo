@@ -1,52 +1,31 @@
-var express=require('express');
+var express = require('express');
 var bodyParser=require('body-parser');
 
 var {mongoose}=require('./db/mongoose');
-var {todo}=require('./models/todo');
-var {User}=require('./models/user');
-var {otherTodo}=require('./models/otherTodo');
+var {users1}=require('./models/users');
+var {Todo_model}=require('./models/todo');
 
 var app=express();
 app.use(bodyParser.json());
 
 app.post('/todos',(req,res)=>{
-  var Todo1=new todo({
-    text:req.body.text
+  // console.log(req.body);
+  var userData=new users1({
+    text:req.body.text,
+    age:req.body.Number
   });
 
-  var newone=new otherTodo({
-    text:req.body.text
-  });
-
-  Todo1.save().then((doc)=>{
+  userData.save().then((doc)=>{
     res.send(doc);
-    console.log(doc);
-  },(e)=>{
-    console.log(e);
-  });
-
-  newone.save().then((doc)=>{
-    res.send(doc);
-    console.log(doc);
-  },(e)=>{
-    console.log(e);
+  },(err)=>{
+  res.status(400).send(err);
   })
-});
 
+
+})
 app.listen(3000,()=>{
-  console.log('Server Started at port 3000');
+  console.log('Started port 3000');
 });
 
 
-
-
-
-
-// var otherTodo=new todo({
-//   text:'afklajfkjak'
-//
-// });
-//
-// otherTodo.save().then((res)=>{
-//   console.log('data added',res);
-// });
+module.exports={app};
