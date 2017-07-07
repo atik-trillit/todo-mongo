@@ -9,8 +9,6 @@ var {Todo_model}=require('./models/todo');
 var app=express();
 app.use(bodyParser.json());
 
-var port=process.env.PORT || 3000;
-
 app.post('/todos',(req,res)=>{
   // console.log(req.body);
   var userData=new users1({
@@ -48,8 +46,8 @@ users1.findById(id).then((todo)=>{
 })
 
 });
-app.listen(port,()=>{
-  console.log(`Started port ${port}`);
+app.listen(3000,()=>{
+  console.log(`Started port 3000`);
 });
 
 

@@ -18,17 +18,7 @@ var users1=mongoose.model('users1',{
   }
 });
 
-// var name=new users1({
-//   text:'Santosh',
-//   age:22
-//
-// });
-//
-// name.save().then((res)=>{
-//   console.log(res);
-// },(err)=>{
-//   console.log(err);
-// });
+
 
 
 module.exports={users1};
