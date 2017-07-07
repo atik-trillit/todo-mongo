@@ -35,21 +35,7 @@ app.get('/todos',(req,res)=>{
 
 app.get('/todos/:id',(req,res)=>{
   var id=req.params.id;
-//   users1.findById(req.params.id).then((user)=>{
-//     if(!user){
-//       res.send('unable to find user data');
-//     }
-//     if(user===null){
-//       res.status(400).send('No user found');
-//     }
-//
-//     res.send(user);
-//   },(e)=>{
-//     res.send(e);
-//   }).catch(e)=>{
-//     res.send(e);
-//   }
-// });
+
 if(!ObjectId.isValid(id)){
   return res.status(404).send()
 }

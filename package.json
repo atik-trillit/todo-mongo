@@ -2,6 +2,14 @@
   "name": "mongo_connect",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start":"node server/server.js",
+    "test": "mocha server/**/*.test.js",
+    "test-watch": "nodemon --exec \"npm test\""
+  },
+"engines":{
+  "node":"8.0.0"
+},
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
@@ -14,14 +22,7 @@
     "nodemon": "^1.10.2",
     "supertest": "^2.0.0"
   },
-  "scripts": {
-    "start":"node server/server.js",
-    "test": "mocha server/**/*.test.js",
-    "test-watch": "nodemon --exec \"npm test\""
-  },
-"engines":{
-  "node":"8.0.0"
-},
+
     "repository": {
     "type": "git",
     "url": "git+https://github.com/atik-trillit/todo-mongo.git"
